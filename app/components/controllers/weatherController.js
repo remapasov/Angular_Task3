@@ -16,14 +16,13 @@ module.controller("weatherController", function($scope, $http) {
     }
   ]
 
-  $scope.selected = $scope.cities[0]
-  
-  $scope.submit = function() {
-    $http.get('/weather', {params: {uac: "el/fL0ni4V", output: "json", query: $scope.selected.query}}).
+  $scope.selectedCity = $scope.cities[0]
+  $scope.$watch("selectedCity", function() {
+    $http.get('/weather', {params: {uac: "el/fL0ni4V", output: "json", query: $scope.selectedCity.query}}).
       success(function(data) {
         $scope.forecastToday = data.weather.forecast[0];
         $scope.forecastTomorrow = data.weather.forecast[1];
         $(".weatherForecast").css("display", "block");
       })
-  }
+  })
 });

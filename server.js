@@ -16,11 +16,4 @@ app.use('/weather', function(req, res){
 	req.pipe(request(url)).pipe(res)
 })
  
-// Static routing
-app.all('/*', function(req, res){
-	var url = __dirname + req.url
-	console.log('Serving url: ' + url)
-	res.sendFile(url)
-})
- 
-console.log('Listening...') 
+console.log('Starting server...') 

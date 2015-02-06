@@ -10,12 +10,11 @@
 <body ng-app="myapp" class="container">
   
   <div ng-controller="weatherController">
-    <div>
-      <form class="cityForm" role="form">
+    <div class="cityForm">
+      <form class="citySelectForm" role="form">
         <div class="dropdown">
-          <select ng-options="city.city for city in cities" class="selectpicker" ng-model="selected">
+          <select ng-options="city.city for city in cities" class="selectpicker" ng-model="selectedCity">
           </select>
-          <input type="submit" ng-click="submit()" class="btn btn-default" value="Submit">
         </div>
       </form>
     </div>
