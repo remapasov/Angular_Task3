@@ -1,0 +1,12 @@
+ul {
+	list-style-type: none;
+}
+
+.forecastToday, .forecastTomorrow {
+	display: table-cell;
+	padding: 20px 80px 0 0;
+}
+
+.weatherForecast {
+	display: none;
+}
